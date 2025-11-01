@@ -23,6 +23,15 @@ import profile_pic3 from "./profile_pic3.jpg"
 import farmhero1 from "./farm-hero1.png"
 import investnow from "./investnow.png"
 
+import healthyHeart from "./healthy-heart.jpg"
+import stress from "./stress.jpg"
+import mentalHealth from "./mental-health.jpg"
+
+import healthyFood from "./HealthyFood.jpg"
+import heartfundamental from "./heartfundamental.jpg"
+import mentalwillingness from "./mentalwillingness.jpg"
+
+
 import { StethoscopeIcon, VideoIcon, BookOpenIcon, HeadsetIcon } from 'lucide-react'
 
 export const assets = {
@@ -431,3 +440,19 @@ export const dummyStoreDashboardData = {
     "totalProducts": 5
 }
 
+export const articlesImage = {
+  article1: healthyHeart,
+  article2: stress,
+  article3: mentalHealth
+}
+export const coursesImage = {
+ course1:  healthyFood,
+  course2: mentalwillingness,
+  course3: heartfundamental,
+}
+
+export const testimonialImage = {
+    pic1: profile_pic1,
+    pic2: profile_pic2,
+    pic3: profile_pic3
+}
