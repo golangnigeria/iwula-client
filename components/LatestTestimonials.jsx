@@ -14,7 +14,7 @@ const testimonials = [
       "Dr. Iwula is not only professional but very compassionate. His advice and care completely changed how I manage my health. I feel better than ever!",
   },
   {
-    name: "Emeka O.",
+    name: "Emeka O.", 
     role: "Patient",
     image: testimonialImage.pic2,
     rating: 5,
