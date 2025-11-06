@@ -9,8 +9,8 @@ const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600"] });
  
 
 export const metadata = {
-    title: "KiniCart. - Farm smarter",
-    description: "KiniCart. - Farm smarter",
+    title: "Dr Iwula. - Your health companion",
+    description: "Dr. Iwula. - Live a healthier life with personalized health tracking, expert advice, and wellness resources at your fingertips.",
 };
 
 export default function RootLayout({ children }) {

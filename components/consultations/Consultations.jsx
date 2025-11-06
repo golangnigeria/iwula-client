@@ -36,7 +36,7 @@ export default function Consultations() {
           onBook={() => handleBook('Video Consultation', 30000)}
         />
         <ConsultationCard
-          color="blue"
+          color="green"
           Icon={MessageCircle}
           title="Chat Consultation"
           price={20000}
@@ -44,7 +44,7 @@ export default function Consultations() {
           onBook={() => handleBook('Chat Consultation', 20000)}
         />
         <ConsultationCard
-          color="orange"
+          color="green"
           Icon={CalendarCheck}
           title="In-Person Visit"
           price={40000}
