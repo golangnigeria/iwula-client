@@ -1,77 +1,117 @@
 'use client'
-import { assets } from '@/assets/assets'
-import { ArrowRightIcon, ChevronRightIcon } from 'lucide-react'
-import Image from 'next/image'
+
 import React from 'react'
+import Link from 'next/link'
+import { ArrowRight, CalendarCheck2, GraduationCap, Users2 } from 'lucide-react'
 import CategoriesMarquee from './CategoriesMarquee'
 
-const Hero = () => {
+export default function Hero() {
+  const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || '₦'
 
-    const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || '₦'
+  return (
+    <section className="relative mx-auto max-w-7xl px-6 pt-16 sm:py-6">
+      <div className="grid xl:grid-cols-2 gap-10 items-center">
+        {/* === LEFT SECTION: TEXT CONTENT === */}
+        <div>
+          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-1 rounded-full text-xs font-medium">
+            Trusted Healthcare • Online & In-person
+          </div>
 
-    return (
-        <div className='mx-6'>
-            <div className='flex max-xl:flex-col gap-8 max-w-7xl mx-auto my-10'>
-                {/* === Left Section (Main Hero) === */}
-                <div className='relative flex-1 flex flex-col bg-green-200 rounded-3xl xl:min-h-100 group'>
-                    <div className='p-5 sm:p-16'>
-                        <div className='inline-flex items-center gap-3 bg-green-300 text-green-600 pr-4 p-1 rounded-full text-xs sm:text-sm'>
-                            <span className='bg-green-600 px-3 py-1 max-sm:ml-1 rounded-full text-white text-xs'>UPDATE</span> 
-                            Free Online Health Consultation Week! 
-                            <ChevronRightIcon className='group-hover:ml-2 transition-all' size={16} />
-                        </div>
+          <h1 className="text-4xl sm:text-6xl font-semibold mt-6 leading-tight bg-gradient-to-r from-slate-900 to-green-700 bg-clip-text text-transparent">
+            Compassionate Care, Expert Guidance — <br className="hidden sm:block" />
+            with <span className="font-bold">Dr. Iwula</span>
+          </h1>
 
-                        <h2 className='text-3xl sm:text-5xl leading-[1.2] my-3 font-medium bg-gradient-to-r from-slate-800 to-[#2d8a03] bg-clip-text text-transparent max-w-xs sm:max-w-md'>
-                            Your Health, Our Priority — With Dr. Iwula.
-                        </h2>
+          <p className="mt-6 text-slate-600 text-sm sm:text-base max-w-md leading-relaxed">
+            Your well-being deserves attention. Book a consultation or enroll in
+            health courses tailored to your journey — all in one trusted space.
+          </p>
 
-                        <div className='text-slate-800 text-sm font-medium mt-4 sm:mt-8'>
-                            <p>Consultations start from</p>
-                            <p className='text-3xl'>{currency}30,000.00</p>
-                        </div>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              href="/consultations"
+              className="inline-flex items-center justify-center gap-2 bg-slate-900 text-white text-sm sm:text-base font-medium py-3 px-8 rounded-md hover:bg-slate-800 hover:scale-105 active:scale-95 transition-all"
+            >
+              Book a Session <ArrowRight size={18} />
+            </Link>
+            <Link
+              href="/courses"
+              className="inline-flex items-center justify-center gap-2 border border-slate-900 text-slate-900 text-sm sm:text-base font-medium py-3 px-8 rounded-md hover:bg-slate-900 hover:text-white hover:scale-105 active:scale-95 transition-all"
+            >
+              View Courses
+            </Link>
+          </div>
 
-                        <button className='bg-slate-800 text-white text-sm py-2.5 px-7 sm:py-5 sm:px-12 mt-4 sm:mt-10 rounded-md hover:bg-slate-900 hover:scale-103 active:scale-95 transition'>
-                            BOOK A SESSION
-                        </button>
-                    </div>
-                  {/*   <Image 
-                        className='sm:absolute hidden md:block bottom-0 right-0 md:w-[80%]' 
-                        src={assets.farmhero1} 
-                        alt="Doctor consultation" 
-                    /> */}
-                </div>
-
-                {/* === Right Section (Mini Cards) === */}
-                <div className='flex flex-col md:flex-row xl:flex-col gap-5 w-full xl:max-w-sm text-sm text-slate-600'>
-                    <div className='flex-1 flex items-center justify-between w-full bg-orange-200 rounded-3xl p-6 px-8 group'>
-                        <div>
-                            <p className='text-3xl font-medium bg-gradient-to-r from-slate-800 to-[#FFAD51] bg-clip-text text-transparent max-w-40'>
-                                Join Our Courses
-                            </p>
-                            <p className='flex items-center gap-1 mt-4'>
-                                Explore Now <ArrowRightIcon className='group-hover:ml-2 transition-all' size={18} /> 
-                            </p>
-                        </div>
-                        <Image className='w-45' src={assets.investnow} alt="Online courses" />
-                    </div>
-
-                    <div className='flex-1 flex items-center justify-between w-full bg-blue-200 rounded-3xl p-6 px-8 group'>
-                        <div>
-                            <p className='text-3xl font-medium bg-gradient-to-r from-slate-800 to-[#78B2FF] bg-clip-text text-transparent max-w-40'>
-                                20% Off Consultations
-                            </p>
-                            <p className='flex items-center gap-1 mt-4'>
-                                Book Now <ArrowRightIcon className='group-hover:ml-2 transition-all' size={18} /> 
-                            </p>
-                        </div>
-                        <Image className='w-35' src={assets.investnow} alt="Discount offer" />
-                    </div>
-                </div>
-            </div>
-
-            <CategoriesMarquee />
+          <div className="mt-10 text-sm text-slate-600">
+            <p>
+              Consultation starts from{' '}
+              <span className="font-semibold text-slate-900">{currency}0.00</span>
+            </p>
+          </div>
         </div>
-    )
-}
 
-export default Hero
+        {/* === RIGHT SECTION: ACTION CARDS === */}
+        <div className="grid sm:grid-cols-2 xl:grid-cols-1 gap-6">
+          {/* Card 1 */}
+          <div className="group bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl p-6 flex flex-col gap-3 hover:shadow-md transition">
+            <div className="flex items-center justify-between">
+              <CalendarCheck2 className="text-green-700" size={26} />
+              <span className="text-xs bg-green-600 text-white px-2 py-1 rounded-full">Now Open</span>
+            </div>
+            <h3 className="text-lg font-semibold text-slate-800">
+              Book Your Appointment
+            </h3>
+            <p className="text-sm text-slate-600">
+              Schedule online consultations with ease — anytime, anywhere.
+            </p>
+            <Link
+              href="/consultations"
+              className="text-green-700 font-medium text-sm mt-2 inline-flex items-center gap-1 hover:gap-2 transition-all"
+            >
+              Start Booking <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          {/* Card 2 */}
+          <div className="group bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl p-6 flex flex-col gap-3 hover:shadow-md transition">
+            <GraduationCap className="text-blue-700" size={26} />
+            <h3 className="text-lg font-semibold text-slate-800">
+              Learn From Experts
+            </h3>
+            <p className="text-sm text-slate-600">
+              Join certified courses that simplify complex health topics.
+            </p>
+            <Link
+              href="/courses"
+              className="text-blue-700 font-medium text-sm mt-2 inline-flex items-center gap-1 hover:gap-2 transition-all"
+            >
+              Explore Courses <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          {/* Card 3 */}
+          <div className="group bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200 rounded-2xl p-6 flex flex-col gap-3 hover:shadow-md transition sm:col-span-2 xl:col-span-1">
+            <Users2 className="text-amber-700" size={26} />
+            <h3 className="text-lg font-semibold text-slate-800">
+              What Our Patients Say
+            </h3>
+            <p className="text-sm text-slate-600">
+              Read trusted experiences from those who found healing and clarity.
+            </p>
+            <Link
+              href="/testimonials"
+              className="text-amber-700 font-medium text-sm mt-2 inline-flex items-center gap-1 hover:gap-2 transition-all"
+            >
+              View Testimonials <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Optional: Category Marquee */}
+      <div className="mt-10">
+        <CategoriesMarquee />
+      </div>
+    </section>
+  )
+}

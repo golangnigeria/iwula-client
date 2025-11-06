@@ -42,7 +42,7 @@ const articles = [
 
 const LatestArticles = () => {
   return (
-    <section className="px-6 my-24 max-w-6xl mx-auto">
+    <section className="px-6 my-14 max-w-6xl mx-auto">
       <Title
         title="Latest Health Articles"
         description="Stay informed with the latest medical insights, research, and wellness tips curated by professionals."
