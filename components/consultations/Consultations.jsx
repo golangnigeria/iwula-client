@@ -28,7 +28,7 @@ export default function Consultations() {
 
       <div className="grid sm:grid-cols-3 gap-8">
         <ConsultationCard
-          color="green"
+          color="amber"
           Icon={Video}
           title="Video Consultation"
           price={30000}
@@ -36,7 +36,7 @@ export default function Consultations() {
           onBook={() => handleBook('Video Consultation', 30000)}
         />
         <ConsultationCard
-          color="green"
+          color="blue"
           Icon={MessageCircle}
           title="Chat Consultation"
           price={20000}

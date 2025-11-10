@@ -62,13 +62,13 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white dark:bg-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <div className="mx-4 sm:mx-6">
         <div className="flex items-center justify-between max-w-7xl mx-auto py-3">
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-extrabold flex items-center text-slate-800 dark:text-slate-100"
+            className="text-2xl font-extrabold flex items-center text-slate-800"
           >
             <span className="text-green-600">Dr.</span>Iwula
             <span className="text-green-600 text-2xl">.</span>
@@ -92,9 +92,9 @@ export default function Navbar() {
             {/* Search */}
             <form
               onSubmit={handleSearch}
-              className="flex items-center gap-2 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full focus-within:ring-2 focus-within:ring-green-500"
+              className="flex items-center gap-2 bg-slate-100  px-3 py-1.5 rounded-full focus-within:ring-2 focus-within:ring-green-500"
             >
-              <Search size={16} className="text-slate-500 dark:text-slate-400" />
+              <Search size={16} className="text-slate-500" />
               <input
                 type="text"
                 placeholder="Search articles..."
@@ -106,7 +106,7 @@ export default function Navbar() {
 
 
             {/* Appointments */}
-            <Link href="/appointments" className="relative text-slate-600 dark:text-slate-200">
+            <Link href="/appointments" className="relative text-slate-600 ">
               <CalendarCheck size={22} />
               {appointmentCount > 0 && (
                 <span className="absolute -top-1 left-3 text-[10px] text-white bg-green-600 w-4 h-4 rounded-full flex items-center justify-center">
@@ -132,11 +132,11 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute right-0 mt-3 bg-white dark:bg-slate-800 rounded-lg shadow-xl w-56 border border-slate-100 dark:border-slate-700"
+                      className="absolute right-0 mt-3 bg-white  rounded-lg shadow-xl w-56 border border-slate-100"
                     >
-                      <div className="px-4 py-3 border-b text-sm border-slate-100 dark:border-slate-700">
+                      <div className="px-4 py-3 border-b text-sm border-slate-100">
                         <p className="font-semibold">{auth?.name || "User"}</p>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                        <p className="text-xs text-slate-500">
                           Balance: ₦{auth?.wallet_balance ?? 0}
                         </p>
                       </div>
@@ -145,20 +145,20 @@ export default function Navbar() {
                         <Link
                           href="/profile"
                           onClick={() => setProfileOpen(false)}
-                          className="flex items-center gap-2 px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700"
+                          className="flex items-center gap-2 px-4 py-2 hover:bg-slate-50"
                         >
                           <User size={14} /> Profile
                         </Link>
                         <Link
                           href="/settings"
                           onClick={() => setProfileOpen(false)}
-                          className="flex items-center gap-2 px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700"
+                          className="flex items-center gap-2 px-4 py-2 hover:bg-slate-50"
                         >
                           <Settings size={14} /> Settings
                         </Link>
                         <button
                           onClick={handleLogout}
-                          className="flex items-center gap-2 px-4 py-2 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/30"
+                          className="flex items-center gap-2 px-4 py-2 text-red-600 hover:bg-red-50"
                         >
                           <LogOut size={14} /> Logout
                         </button>
@@ -179,21 +179,9 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-4">
-            {/* Dark Mode Toggle (mobile) */}
-            <button
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-            >
-              {theme === "light" ? (
-                <Moon size={20} className="text-slate-700" />
-              ) : (
-                <Sun size={20} className="text-yellow-400" />
-              )}
-            </button>
-
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="text-slate-700 dark:text-slate-200"
+              className="text-slate-700"
             >
               {menuOpen ? <X size={28} /> : <MenuIcon size={28} />}
             </button>
@@ -209,9 +197,9 @@ export default function Navbar() {
             animate={{ height: "auto" }}
             exit={{ height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden overflow-hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-md"
+            className="lg:hidden overflow-hidden border-t border-slate-200 bg-white shadow-md"
           >
-            <div className="flex flex-col px-6 py-4 space-y-3 text-slate-700 dark:text-slate-100">
+            <div className="flex flex-col px-6 py-4 space-y-3 text-slate-700">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -226,7 +214,7 @@ export default function Navbar() {
                 <Link
                   href="/login"
                   onClick={() => setMenuOpen(false)}
-                  className="text-sm font-medium text-green-600 border border-green-600 px-4 py-1.5 rounded-full hover:bg-green-50 dark:hover:bg-green-900/20 transition text-center"
+                  className="text-sm font-medium text-green-600 border border-green-600 px-4 py-1.5 rounded-full hover:bg-green-50  transition text-center"
                 >
                   Login
                 </Link>

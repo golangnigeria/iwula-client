@@ -33,12 +33,12 @@ const testimonials = [
 
 const LatestTestimonials = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
+    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900 dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900">
           What Our Patients Are Saying
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
+        <p className="text-gray-600  max-w-2xl mx-auto mb-12">
           Real stories from real patients who’ve experienced care, compassion, and results with Dr. Iwula.
         </p>
 
@@ -46,9 +46,9 @@ const LatestTestimonials = () => {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-2xl hover:shadow-xl transition-all duration-300 relative"
+              className="p-6 bg-white  shadow-lg rounded-2xl hover:shadow-xl transition-all duration-300 relative"
             >
-              <Quote className="absolute top-4 right-4 text-gray-200 dark:text-gray-700 w-8 h-8" />
+              <Quote className="absolute top-4 right-4 text-gray-200 w-8 h-8" />
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-14 h-14 rounded-full overflow-hidden">
                   <Image
@@ -60,7 +60,7 @@ const LatestTestimonials = () => {
                   />
                 </div>
                 <div className="text-left">
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <h4 className="text-lg font-semibold text-gray-900 ">
                     {t.name}
                   </h4>
                   <p className="text-sm text-gray-500">{t.role}</p>
@@ -71,7 +71,7 @@ const LatestTestimonials = () => {
                   <Star key={idx} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                 ))}
               </div>
-              <p className="text-gray-600 dark:text-gray-300 italic leading-relaxed">
+              <p className="text-gray-600  italic leading-relaxed">
                 “{t.feedback}”
               </p>
             </div>
